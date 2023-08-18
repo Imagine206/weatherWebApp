@@ -2,4 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@500&display=swap');
 
+*{
+    font-family: 'Noto Serif Georgian', serif;
+}
+
+
+
+#bgImg{
+    background-image: url(/images/zhifei-zhou-QEob0Fp4rdg-unsplash.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

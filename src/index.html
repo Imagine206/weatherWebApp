@@ -3,12 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/3cfd7f0753.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/dist/output.css">
-    <title>Document</title>
+    <title>Weather App</title>
 </head>
-<body>
-    
+<body class="box-border">
+    <main class="">
+        <div id="bgImg" class="container my-10  mx-auto border-solid border-green-500 border-4" >
+            <div class="min-h-[50vh] flex justify-between px-10 py-5 border-solid border-blue-500 border-4">
+                <div class="">
+                    <form action="">
+                        <input type="text" class="max-w-lg border-b-2 border-solid border-indigo-500 bg-transparent font-extrabold text-white text-5xl  outline-none" autofocus required>
+                        <input type="submit" class="cursor-pointer rounded-md bg-indigo-500 px-8 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
+                    </form>
+                </div>
+                <div class="text-center">
+                    <i class="fa-solid fa-location-dot text-5xl"></i>
+                    <p>Seattle, USA</p>
+                    <p>1:04 pm</p>
+                </div>
+            </div>
+            <div class="border-solid border-red-500 border-4">
 
+            </div>
+        </div>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>
