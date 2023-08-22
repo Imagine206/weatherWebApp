@@ -9,22 +9,64 @@
 </head>
 <body class="box-border">
     <main class="">
-        <div id="bgImg" class="container my-10  mx-auto border-solid border-green-500 border-4" >
-            <div class="min-h-[50vh] flex justify-between px-10 py-5 border-solid border-blue-500 border-4">
+        <div  class="rounded-lg container my-10  mx-auto border-solid border-green-500 border-4" >
+            <div id="bgImg" class="min-h-[50vh] gap-10 flex justify-between px-10 py-5 border-solid border-blue-500 border-4">
                 <div class="">
-                    <form action="">
-                        <input type="text" class="max-w-lg border-b-2 border-solid border-indigo-500 bg-transparent font-extrabold text-white text-5xl  outline-none" autofocus required>
-                        <input type="submit" class="cursor-pointer rounded-md bg-indigo-500 px-8 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
+                    <form action="" class="flex gap-3 flex-col md:flex-row">
+                        <input type="text" class="w-full border-b-2 border-solid border-indigo-500 bg-transparent font-extrabold text-white text-lg  outline-none" maxlength="30" autofocus required>
+                        <input type="submit" class="cursor-pointer rounded-md bg-indigo-500 px-5 py-1 text-[10px] md:text-lg font-medium text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
                     </form>
                 </div>
-                <div class="text-center">
-                    <i class="fa-solid fa-location-dot text-5xl"></i>
+                <div class="text-center text-md md:text-2xl lg:text-4xl">
+                    <i class="fa-solid fa-location-dot "></i>
                     <p>Seattle, USA</p>
                     <p>1:04 pm</p>
                 </div>
             </div>
-            <div class="border-solid border-red-500 border-4">
-
+            <div class="backdrop-blur-xl bg-slate-300/30 border-solid border-red-500 border-4 min-h-[30vh]">
+                <div class="grid grid-cols-7">
+                    <div class="col-span-2 border-solid border-black border-r-2">
+                        <span>
+                            <h1>82*</h1>
+                            <p>Monday 27th</p>
+                        </span>
+                        <span>
+                            <i class="fa-solid fa-cloud"></i>
+                            <p>4mph / 67*</p>
+                        </span>
+                    </div>
+                    <div>
+                        <p>TUE</p>
+                        <i class="fa-solid fa-cloud"></i>
+                        <p>60*</p>
+                    </div>
+                    <div>
+                        <p>WED</p>
+                        <i class="fa-solid fa-cloud"></i>
+                        <p>60*</p>
+                    </div>
+                    <div>
+                        <p>THU</p>
+                        <i class="fa-solid fa-cloud"></i>
+                        <p>60*</p>
+                    </div>
+                    <div>
+                        <p>FRI</p>
+                        <i class="fa-solid fa-cloud"></i>
+                        <p>60*</p>
+                    </div>
+                    <div>
+                        <p>SAT</p>
+                        <i class="fa-solid fa-cloud"></i>
+                        <p>60*</p>
+                    </div>
+                    <div>
+                        <p>SUN</p>
+                        <i class="fa-solid fa-cloud"></i>
+                        <p>60*</p>
+                    </div>
+                    
+                </div>
             </div>
         </div>
     </main>
