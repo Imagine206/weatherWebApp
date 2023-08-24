@@ -1,44 +1,26 @@
-// async function getLocation(cityName){
+async function getLocation(cityName){
     
-//     try{
-//         const response = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(cityName)}&count=1&language=en&format=json`);
+    try{
+        const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=8cced427c682481685b222916231703&q=${cityName} &aqi=no`);
 
-//         if(response.ok){
-//             const data = await response.json();
-
-//             console.log(data.results[0])
-//             if(data.results.length > 0){
-//                 const location = data.results[0];
-//                 const name = location.name;
-//                 const {latitude: latitude, longitude: longitude} = data.results[0];
-
-//                 return {
-//                     name, 
-//                     latitude,
-//                     longitude
-//                 }
-//             }else {
-//                 console.error("No results found for the specified city")
-//                 return null;
-//             }
-//         }else{
-//             throw new Error("Error fetching location data.")
-//         }
-//     }catch (error){
-//         console.log("Error fetching: ", error);
-//         return null;
-//     }
+        if(response.ok){
+            const data = response.json();
+            return data;
+        }
+    }catch (error){
+        console.log("Error fetching: ", error);
+        return null;
+    }
     
 
-// }
+}
 
-// getLocation('Settle')
-//     .then(location => {
-//         if (location){
-//             getWeather(location.latitude, location.longitude)
-//         }
-//     }) 
 
+
+getLocation("Philippines")
+    .then(data => {
+        console.log(data)
+    })
 
 // async function getWeather(lat, lon){
 //     return fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&hourly=temperature_2m,rain,visibility,${"is_day"}&current_weather=true&models=best_match`)
