@@ -8,13 +8,13 @@
     <title>Weather App</title>
 </head>
 <body class="box-border">
-    <main class="">
-        <div  class="rounded-lg container my-10  mx-auto border-solid border-green-500 border-4" >
-            <div id="bgImg" class="min-h-[50vh] gap-10 flex justify-between px-10 py-5 border-solid border-blue-500 border-4">
+    <main class="bg-slate-300/30">
+        <div  class="rounded-lg flex flex-col container my-10  mx-auto border-solid" >
+            <div id="bgImg" class="min-h-[50vh] gap-10 flex justify-between px-10 py-5 border-solid">
                 <div class="">
                     <form action="" class="flex gap-3 flex-col md:flex-row">
-                        <input type="text" class="w-full border-b-2 border-solid border-indigo-500 bg-transparent font-extrabold text-white text-lg  outline-none" maxlength="30" autofocus required>
-                        <input type="submit" class="cursor-pointer rounded-md bg-indigo-500 px-5 py-1 text-[10px] md:text-lg font-medium text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
+                        <input type="text" id="userInput" class="w-full border-b-2 border-solid border-indigo-500 bg-transparent font-extrabold text-white text-lg  outline-none" maxlength="30" autofocus required>
+                        <input type="submit" id="submit" class="cursor-pointer rounded-md bg-indigo-500 px-5 py-1 text-[10px] md:text-lg font-medium text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
                     </form>
                 </div>
                 <div class="text-center text-md md:text-2xl lg:text-4xl">
@@ -23,49 +23,42 @@
                     <p>1:04 pm</p>
                 </div>
             </div>
-            <div id="weatherWrapper" class="backdrop-blur-xl bg-slate-300/30 border-solid border-red-500 border-4 min-h-[30vh]">
-                <div class="grid grid-cols-7">
-                    <div class="col-span-2 border-solid border-black border-r-2">
-                        <span>
-                            <h1>82*</h1>
-                            <p>Monday 27th</p>
-                        </span>
-                        <span>
-                            <i class="fa-solid fa-cloud"></i>
-                            <p>4mph / 67*</p>
+            <div id="weatherWrapper" class="backdrop-blur-xl  border-solid min-h-[30vh]">
+                <div class="my-5 flex justify-around gap-5 flex-col lg:flex-row ">
+                    <div class="bg-white px-10 w-full rounded-3xl shadow-2xl">
+                        <i class="fa-solid fa-cloud md:text-5xl"></i>
+                        <p class="md:text-5xl">12*c</p>
+                        <span class="flex text-slate-600">
+                            <p>Mostly Cloudy</p>
+                            <p>Rain</p>
                         </span>
                     </div>
-                    <div>
-                        <p>TUE</p>
-                        <i class="fa-solid fa-cloud"></i>
-                        <p>60*</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+                        <div class="gridItem">
+                            <h4>UV Index</h4>
+                            <p>5</p>
+                        </div>
+                        <div class="gridItem">
+                            <h4>Wind Status</h4>
+                            <p>7.70 Mph</p>
+                        </div>
+                        <div class="gridItem">
+                            <h4>Humidity</h4>
+                            <p>15%</p>
+                        </div>
+                        <div class="gridItem">
+                            <h4>Visibilty</h4>
+                            <p>5.2 km</p>
+                        </div>
+                        <div class="gridItem">
+                            <h4>Air Quality</h4>
+                            <p>100</p>
+                        </div>
+                        <div class="gridItem">
+                            <h4>Air Quality</h4>
+                            <p>100</p>
+                        </div>
                     </div>
-                    <div>
-                        <p>WED</p>
-                        <i class="fa-solid fa-cloud"></i>
-                        <p>60*</p>
-                    </div>
-                    <div>
-                        <p>THU</p>
-                        <i class="fa-solid fa-cloud"></i>
-                        <p>60*</p>
-                    </div>
-                    <div>
-                        <p>FRI</p>
-                        <i class="fa-solid fa-cloud"></i>
-                        <p>60*</p>
-                    </div>
-                    <div>
-                        <p>SAT</p>
-                        <i class="fa-solid fa-cloud"></i>
-                        <p>60*</p>
-                    </div>
-                    <div>
-                        <p>SUN</p>
-                        <i class="fa-solid fa-cloud"></i>
-                        <p>60*</p>
-                    </div>
-                    
                 </div>
             </div>
         </div>

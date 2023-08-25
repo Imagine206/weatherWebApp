@@ -16,3 +16,16 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.gridItem{
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1.5rem;
+}
+.gridItem h4{
+    color: slategray;
+    font-size: .8rem;
+}
+.gridItem p{
+    font-size: 3rem;
+}
