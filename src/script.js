@@ -1,4 +1,4 @@
-
+const userInput = document.getElementById("userInput")
 
 
 async function getWeather(cityName){
@@ -20,20 +20,38 @@ async function getWeather(cityName){
 
 }
 
-function displayWeather(e){
+const apiKey = "wcis80F4Zjlb5bxN230ak5HArGqE5bWlVJRCTwcJxKM"
+async function getImage(){
+    try {
+        const response = await fetch(`https://api.unsplash.com/photos/random/?client_id=${apiKey}&query=${userInput.value}`)
+        const data = await response.json();
+
+        if (response.ok){
+            const imageUrl = data.urls.regular;
+            return imageUrl;
+        }else {
+            console.log('API request failed: ', data.errors);
+        }
+    } catch (error) {
+        console.error("Error fetching image: ", error)
+    }
+}
+
+
+
+function Weather(e){
     e.preventDefault();
     
-    const userInput = document.getElementById("userInput")
-
     if(userInput.value !== ""){
+        getImage().then(imageUrl => {
+            console.log(imageUrl)
+            const imageElement = document.getElementById('bgImg');
+            imageElement.style.backgroundImage = `url(${imageUrl})`
+        })
+
         getWeather(userInput.value)
             .then(data => {
-                console.log(data)
-                const {name, region, country, localtime} = data.location;
-                const {feelslike_f, temp_f, wind_mph, humidity, condition} = data.current;
-
-                console.log(name, region)
-                return {name, region, country, localtime};
+                displayWeather(data.location, data.current);
         })
     }else {
         alert("U must enter something")
@@ -42,7 +60,21 @@ function displayWeather(e){
 
 }
 
+function displayWeather(location, current){
+    const {name, region, country, localtime} = location;
+    const {feelslike_f, temp_f, wind_mph, humidity, condition} = current;
+
+    
+    let time = document.getElementById('time');
+    let place = document.getElementById('location');
+
+    place.innerHTML = '';
+    time.innerHTML = '';
+
+    time.innerHTML = localtime;
+    place.innerHTML = `${name}, ${country} `;
+}
 
 
 const submitBtn = document.getElementById('submit')
-submitBtn.addEventListener('click', displayWeather)
+submitBtn.addEventListener('click', Weather)

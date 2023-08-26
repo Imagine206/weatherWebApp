@@ -9,8 +9,9 @@
 </head>
 <body class="box-border">
     <main class="bg-slate-300/30">
-        <div  class="rounded-lg flex flex-col container my-10  mx-auto border-solid" >
-            <div id="bgImg" class="min-h-[50vh] gap-10 flex justify-between px-10 py-5 border-solid">
+        <div  class="p-3 rounded-lg flex flex-col container my-10  mx-auto border-solid" >
+            <div class="min-h-[50vh] gap-10 relative flex justify-between px-10 py-5 border-solid">
+                <div  id="bgImg" class="absolute top-0 left-0 w-full h-full "></div>
                 <div class="">
                     <form action="" class="flex gap-3 flex-col md:flex-row">
                         <input type="text" id="userInput" class="w-full border-b-2 border-solid border-indigo-500 bg-transparent font-extrabold text-white text-lg  outline-none" maxlength="30" autofocus required>
@@ -19,28 +20,30 @@
                 </div>
                 <div class="text-center text-md md:text-2xl lg:text-4xl">
                     <i class="fa-solid fa-location-dot "></i>
-                    <p>Seattle, USA</p>
-                    <p>1:04 pm</p>
+                    <p id="location">Seattle, USA</p>
+                    <p id="time">1:04 pm</p>
                 </div>
             </div>
             <div id="weatherWrapper" class="backdrop-blur-xl  border-solid min-h-[30vh]">
                 <div class="my-5 flex justify-around gap-5 flex-col lg:flex-row ">
-                    <div class="bg-white px-10 w-full rounded-3xl shadow-2xl">
-                        <i class="fa-solid fa-cloud md:text-5xl"></i>
-                        <p class="md:text-5xl">12*c</p>
-                        <span class="flex text-slate-600">
+                    <div class="bg-white px-10 w-full flex justify-center items-center flex-col rounded-3xl shadow-2xl">
+                        <span class="flex gap-3">
+                            <i class="fa-solid fa-cloud text md:text-8xl text-3xl"></i>
+                            <p class="md:text-5xl">12*c</p>
+                        </span>
+                        <span class="flex text-slate-600 gap-4">
                             <p>Mostly Cloudy</p>
                             <p>Rain</p>
                         </span>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-2 w-full">
                         <div class="gridItem">
                             <h4>UV Index</h4>
                             <p>5</p>
                         </div>
                         <div class="gridItem">
                             <h4>Wind Status</h4>
-                            <p>7.70 Mph</p>
+                            <p>7.70 <small class="text-[16px] text-slate-400">mph</small></p>
                         </div>
                         <div class="gridItem">
                             <h4>Humidity</h4>
