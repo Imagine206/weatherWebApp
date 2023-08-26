@@ -26,32 +26,35 @@
             </div>
             <div id="weatherWrapper" class="backdrop-blur-xl  border-solid min-h-[30vh]">
                 <div class="my-5 flex justify-around gap-5 flex-col lg:flex-row ">
-                    <div class="bg-white px-10 w-full flex justify-center items-center flex-col rounded-3xl shadow-2xl">
+                    <div class="bg-white p-5 w-full flex justify-center items-center flex-col rounded-3xl shadow-2xl">
                         <span class="flex gap-3">
-                            <i class="fa-solid fa-cloud text md:text-8xl text-3xl"></i>
-                            <p class="md:text-5xl">12*c</p>
+                            <img id="iconImg" src="" alt="">
+                            <p id="temp" class="md:text-5xl">12*c</p>
                         </span>
                         <span class="flex text-slate-600 gap-4">
-                            <p>Mostly Cloudy</p>
-                            <p>Rain</p>
+                            <p id="cond">Mostly Cloudy</p>
                         </span>
                     </div>
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-2 w-full">
                         <div class="gridItem">
                             <h4>UV Index</h4>
-                            <p>5</p>
+                            <p id="uv"></p>
                         </div>
-                        <div class="gridItem">
+                        <div class="gridItem gap-3">
                             <h4>Wind Status</h4>
-                            <p>7.70 <small class="text-[16px] text-slate-400">mph</small></p>
+                            <p id="windSpeed" class="flex"></p>
+                            <span id="windWrapper" class="flex items-center gap-2">
+                                <i class="fa-solid fa-compass text-indigo-500"></i>
+                                <small class="text-[16px] text-slate-400" id="windDr"></small>
+                            </span>
                         </div>
                         <div class="gridItem">
                             <h4>Humidity</h4>
-                            <p>15%</p>
+                            <p id="hum"></p>
                         </div>
                         <div class="gridItem">
                             <h4>Visibilty</h4>
-                            <p>5.2 km</p>
+                            <p id="vis"></p>
                         </div>
                         <div class="gridItem">
                             <h4>Air Quality</h4>

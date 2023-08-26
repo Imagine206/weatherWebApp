@@ -61,18 +61,40 @@ function Weather(e){
 }
 
 function displayWeather(location, current){
+    console.log(location)
+    console.log(current)
     const {name, region, country, localtime} = location;
-    const {feelslike_f, temp_f, wind_mph, humidity, condition} = current;
+    const {feelslike_f, temp_f, wind_mph, humidity, condition, uv, wind_dir, vis_miles} = current;
 
     
     let time = document.getElementById('time');
     let place = document.getElementById('location');
+    let uvIndex = document.getElementById('uv');
+    let windSpeed = document.getElementById('windSpeed');
+    let temp = document.getElementById('temp');
+    let cond = document.getElementById('cond');
+    let windDr = document.getElementById('windDr');
+    let hum = document.getElementById('hum');
+    let iconImg = document.getElementById('iconImg');
+    let vis = document.getElementById('vis')
+
+console.log(condition.text)
 
     place.innerHTML = '';
     time.innerHTML = '';
 
     time.innerHTML = localtime;
     place.innerHTML = `${name}, ${country} `;
+    uvIndex.innerHTML = uv;
+    windSpeed.innerHTML = `${wind_mph} <small class="text-slate-400 text-[16px]">Mph</small>`;
+    temp.innerHTML = temp_f;
+    cond.innerHTML = condition.text;
+    windDr.innerHTML = wind_dir;
+    iconImg.src = condition.icon;
+    vis.innerHTML = `${vis_miles} <small class="text-slate-400 text-[16px]">M</small>`;
+    hum.innerHTML = `${humidity}%`;
+
+    const divWrapper = document.createElement('div');
 }
 
 
