@@ -19,7 +19,7 @@
 }
 
 .gridItem{
-    background-color: white;
+    background-color: ;
     padding: 1rem;
     border-radius: 1rem;
 }
@@ -29,4 +29,9 @@
 }
 .gridItem p{
     font-size: 3rem;
+}
+.gridItem p,
+.gridItem h4,
+.gridItem span{
+    z-index: 100;
 }

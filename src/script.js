@@ -93,6 +93,12 @@ console.log(condition.text)
     iconImg.src = condition.icon;
     vis.innerHTML = `${vis_miles} <small class="text-slate-400 text-[16px]">M</small>`;
     hum.innerHTML = `${humidity}%`;
+    if(humidity > 60){
+        const humStatus = document.getElementById('humStatus');
+        humStatus.innerHTML = `Extreme <i class="fa-solid fa-thumbs-down"></i>`
+    }else {
+        humStatus.innerHTML = `Normal <i class="fa-solid fa-thumbs-up"></i>`
+    }
 
     const divWrapper = document.createElement('div');
 }
