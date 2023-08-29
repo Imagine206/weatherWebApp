@@ -10,32 +10,32 @@
 <body class="box-border">
     <main class="bg-slate-300/30">
         <div  class="p-3 rounded-lg flex flex-col container my-10  mx-auto border-solid" >
-            <div class="min-h-[50vh] gap-10 relative flex justify-between px-10 py-5 border-solid">
+            <div class="min-h-[50vh] gap-10 relative flex justify-between px-5 py-5 border-solid">
                 <div  id="bgImg" class="absolute top-0 left-0 w-full h-full "></div>
                 <div class="">
                     <form action="" class="flex gap-3 flex-col md:flex-row">
-                        <input type="text" id="userInput" class="w-full border-b-2 border-solid border-indigo-500 bg-transparent font-extrabold text-white text-lg  outline-none" maxlength="30" autofocus required>
+                        <input type="text" id="userInput" class="w-full border-b-2 border-solid border-indigo-500 bg-transparent font-extrabold text-black text-lg  outline-none" maxlength="30" autofocus required>
                         <input type="submit" id="submit" class="cursor-pointer rounded-md bg-indigo-500 px-5 py-1 text-[10px] md:text-lg font-medium text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
                     </form>
                 </div>
                 <div class="text-center text-md md:text-2xl lg:text-4xl">
                     <i class="fa-solid fa-location-dot "></i>
-                    <p id="location">Seattle, USA</p>
-                    <p id="time">1:04 pm</p>
+                    <p id="location"></p>
+                    <p id="time"></p>
                 </div>
             </div>
             <div id="weatherWrapper" class="backdrop-blur-xl  border-solid min-h-[30vh]">
                 <div class="my-5 flex justify-around gap-5 flex-col lg:flex-row ">
-                    <div class="bg-white p-5 w-full flex justify-center items-center flex-col rounded-3xl shadow-2xl">
+                    <div class="bg-white p-5 w-full flex justify-center items-center flex-col rounded-3xl shadow">
                         <span class="flex gap-3">
-                            <img id="iconImg" src="" alt="">
-                            <p id="temp" class="md:text-5xl">12*c</p>
+                            <img class="w-[20vw]" id="iconImg" src="" alt="">
+                            <p id="temp" class="md:text-5xl flex"></p>
                         </span>
                         <span class="flex text-slate-600 gap-4">
-                            <p id="cond">Mostly Cloudy</p>
+                            <p id="cond"></p>
                         </span>
                     </div>
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-2 w-full">
+                    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 w-full">
                         <div class="gridItem">
                             <h4>UV Index</h4>
                             <p id="uv"></p>
@@ -49,22 +49,21 @@
                             </span>
                         </div>
                         <div class="gridItem relative">
-                            <div class="absolute top-0 right-0 w-full h-full blur-md  bg-white/30 "></div>
                             <h4>Humidity</h4>
                             <p id="hum"></p>
-                            <p id="humStatus"></p>
+                            <p id="humStatus" ></p>
                         </div>
-                        <div class="gridItem">
+                        <div class="gridItem ">
                             <h4>Visibilty</h4>
                             <p id="vis"></p>
                         </div>
                         <div class="gridItem">
-                            <h4>Air Quality</h4>
-                            <p>100</p>
+                            <h4>Feels like</h4>
+                            <p id="feelsLike"></p>
                         </div>
                         <div class="gridItem">
-                            <h4>Air Quality</h4>
-                            <p>100</p>
+                            <h4>precipitation</h4>
+                            <p id="precip"></p>
                         </div>
                     </div>
                 </div>

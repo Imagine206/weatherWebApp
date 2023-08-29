@@ -10,7 +10,8 @@ async function getWeather(cityName){
             const data = response.json();
             return data;
         }else {
-            throw new Error("Location Not Found")
+            alert("Location not found!")
+            throw new Error("Location Not Found");
         }
     }catch (error){
             console.log("Error fetching: ", error);
@@ -58,13 +59,15 @@ function Weather(e){
     }
     
 
+    userInput.value = ""
+
 }
 
 function displayWeather(location, current){
     console.log(location)
     console.log(current)
     const {name, region, country, localtime} = location;
-    const {feelslike_f, temp_f, wind_mph, humidity, condition, uv, wind_dir, vis_miles} = current;
+    const {temp_f, wind_mph, humidity, condition, uv, wind_dir, vis_miles, feelslike_f, precip_mm} = current;
 
     
     let time = document.getElementById('time');
@@ -76,7 +79,9 @@ function displayWeather(location, current){
     let windDr = document.getElementById('windDr');
     let hum = document.getElementById('hum');
     let iconImg = document.getElementById('iconImg');
-    let vis = document.getElementById('vis')
+    let vis = document.getElementById('vis');
+    let feelsLike = document.getElementById('feelsLike');
+    let precip = document.getElementById('precip');
 
 console.log(condition.text)
 
@@ -87,7 +92,7 @@ console.log(condition.text)
     place.innerHTML = `${name}, ${country} `;
     uvIndex.innerHTML = uv;
     windSpeed.innerHTML = `${wind_mph} <small class="text-slate-400 text-[16px]">Mph</small>`;
-    temp.innerHTML = temp_f;
+    temp.innerHTML = `${temp_f}<i class="text-[7px] fa-regular fa-circle"></i> <small class="text-[16px] align-top"> f</small>`;
     cond.innerHTML = condition.text;
     windDr.innerHTML = wind_dir;
     iconImg.src = condition.icon;
@@ -95,12 +100,13 @@ console.log(condition.text)
     hum.innerHTML = `${humidity}%`;
     if(humidity > 60){
         const humStatus = document.getElementById('humStatus');
-        humStatus.innerHTML = `Extreme <i class="fa-solid fa-thumbs-down"></i>`
+        humStatus.innerHTML = `<i class="text-[16px] text-indigo-500 fa-solid fa-thumbs-down"></i> <small class="text-[16px] text-slate-400"> Extreme</small> `
     }else {
-        humStatus.innerHTML = `Normal <i class="fa-solid fa-thumbs-up"></i>`
+        humStatus.innerHTML = `<i class="text-[16px] text-indigo-500 fa-solid fa-thumbs-up"></i> <small class="text-[16px] text-slate-400"> Normal</small> `
     }
 
-    const divWrapper = document.createElement('div');
+    feelsLike.innerHTML = feelslike_f;
+    precip.innerHTML = precip_mm;
 }
 
 
