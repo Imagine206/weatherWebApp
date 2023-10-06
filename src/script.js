@@ -112,3 +112,13 @@ console.log(condition.text)
 
 const submitBtn = document.getElementById('submit')
 submitBtn.addEventListener('click', Weather)
+
+
+
+function weather(cityName){
+    let city = userInput.value;
+
+    const getWeather = async function() {
+
+    }
+}
